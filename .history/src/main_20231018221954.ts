@@ -9,5 +9,5 @@ import 'vant/lib/index.css'
 const app = createApp(App)
 
 app.use(createPinia())
-app.use(router)
+app.u
 app.mount('#app')
