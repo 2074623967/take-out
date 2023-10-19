@@ -56,7 +56,7 @@ app.use(Checkbox)
 app.use(CheckboxGroup)
 
 const rootValue = 16
-const rootWidth = 390 //设计稿iphone12
+const rootWidth = 390 //设计稿1
 const deviceWidth = document.documentElement.clientWidth
 document.documentElement.style.fontSize = (deviceWidth * rootValue) / rootWidth + 'px'
 
