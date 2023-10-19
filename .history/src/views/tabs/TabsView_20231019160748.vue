@@ -17,11 +17,11 @@ watch(active, (nv) => {
 <template>
   <!-- <div class="center">{{ active }}</div> -->
   <RouterView />
-  <VanTabbar v-model="active">
-    <VanTabbarItem name="home" icon="home-o">首页</VanTabbarItem>
-    <VanTabbarItem name="order" icon="bars">订单</VanTabbarItem>
-    <VanTabbarItem name="me" icon="contact">我的</VanTabbarItem>
-  </VanTabbar>
+  <Tabbar v-model="active">
+    <TabbarItem name="home" icon="home-o">首页</TabbarItem>
+    <TabbarItem name="order" icon="bars">订单</TabbarItem>
+    <TabbarItem name="me" icon="contact">我的</TabbarItem>
+  </Tabbar>
 </template>
 
 <style scoped>

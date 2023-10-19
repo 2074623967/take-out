@@ -54,5 +54,6 @@ app.use(SidebarItem)
 app.use(Popup)
 app.use(Checkbox)
 app.use(CheckboxGroup)
+app.use(lazyPlugin)
 
 app.mount('#app')
