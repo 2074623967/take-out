@@ -55,32 +55,4 @@ const { data, pending } = useAsync(fetchHomePageData, {
 .fade-leave-to {
   opacity: 0;
 }
-.home-page {
-  background: var(--op-gray-bg-color);
-  padding-bottom: 70px;
-
-  &__banner {
-    img {
-      width: 100%;
-      padding-top: 10px;
-      background: white;
-    }
-  }
-  &__activity {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px;
-
-    &__swipe {
-      border-radius: 8px;
-      width: 180px;
-      height: 170px;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
-}
 </style>
