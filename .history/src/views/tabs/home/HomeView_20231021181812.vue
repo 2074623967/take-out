@@ -33,7 +33,7 @@ const { data, pending } = useAsync(fetchHomePageData, {
       <SearchView v-if="isSearchViewShown" @cancel="toggleSearchView" />
     </Transition>
     <div v-show="!isSearchViewShown">
-      <TheTop :recomments="data.searchRecomments" @searchClick="toggleSearchView" />
+      <TheTop :recomments="recomments" @searchClick="toggleSearchView" />
     </div>
   </div>
 </template>
