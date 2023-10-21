@@ -41,7 +41,6 @@ const onClear = () => {
       </template>
     </VanSearch> -->
     <OpSearch
-      show-action
       v-model="searchValue"
       shape="round"
       background="linear-gradient(to right, rgb(53, 200, 250), rgb(31, 175, 243))"
@@ -51,7 +50,7 @@ const onClear = () => {
       @clear="onClear"
     >
       <template #right-icon>
-        <div>搜索</div>
+        <div @click="emits('searchClick')">搜索</div>
       </template>
     </OpSearch>
     <div class="search-recomments">

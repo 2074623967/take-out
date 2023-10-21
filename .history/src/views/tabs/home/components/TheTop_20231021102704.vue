@@ -41,7 +41,6 @@ const onClear = () => {
       </template>
     </VanSearch> -->
     <OpSearch
-      show-action
       v-model="searchValue"
       shape="round"
       background="linear-gradient(to right, rgb(53, 200, 250), rgb(31, 175, 243))"
@@ -50,9 +49,6 @@ const onClear = () => {
       @cancel="onCancel"
       @clear="onClear"
     >
-      <template #right-icon>
-        <div>搜索</div>
-      </template>
     </OpSearch>
     <div class="search-recomments">
       <div v-for="item in recomments" :key="item.value" class="tag">{{ item.lable }}</div>
