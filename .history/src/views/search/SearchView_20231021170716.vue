@@ -45,24 +45,13 @@ const onTagClick = (v: string) => {
   onSearch(v)
 }
 // 输入的时候监听请求
-// watch(
-//   searchValue,
-//   useDebounce((nv) => {
-//     if (!nv) {
-//       searchResult.value = []
-//       return
-//     }
-//     onSearch(nv as string)
-//   }, 1000)
-// )
-const debounceValue = useDebounce(searchValue, 1000)
-watch(debounceValue, (nv) => {
-  if (!nv) {
-    searchResult.value = []
-    return
-  }
-  onSearch(nv as string)
-})
+// watch(searchValue, (nv) => {
+//   if (!nv) {
+//     searchResult.value = []
+//     return
+//   }
+//   onSearch(nv as string)
+// })
 </script>
 
 <template>
