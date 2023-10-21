@@ -40,18 +40,6 @@ const onSearch = async (v?: string | number) => {
     searchState.value = DONE
   }
 }
-const onTagClick = (v: string) => {
-  searchValue.value = v
-  onSearch(v)
-}
-// 输入的时候监听请求
-watch(searchValue, (nv) => {
-  if (!nv) {
-    searchResult.value = []
-    return
-  }
-  onSearch(nv as string)
-})
 </script>
 
 <template>

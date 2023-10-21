@@ -22,8 +22,8 @@ const [isSearchViewShown, toggleSearchView] = useToggle(false)
       <SearchView v-if="isSearchViewShown" @cancel="toggleSearchView" />
     </Transition>
     <div v-show="!isSearchViewShown">
-      <TheTop :recomments="recomments" @searchClick="toggleSearchView" />
     </div>
+    <TheTop :recomments="recomments" @searchClick="toggleSearchView" />
   </div>
 </template>
 

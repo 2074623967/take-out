@@ -17,23 +17,16 @@ const [isSearchViewShown, toggleSearchView] = useToggle(false)
 
 <template>
   <div class="home-page">
-    <!-- 内置组件,实现动画效果 -->
-    <Transition name="fade">
+    内置组件
+    <Transition>
       <SearchView v-if="isSearchViewShown" @cancel="toggleSearchView" />
     </Transition>
-    <div v-show="!isSearchViewShown">
-      <TheTop :recomments="recomments" @searchClick="toggleSearchView" />
-    </div>
+    <TheTop :recomments="recomments" @searchClick="toggleSearchView" />
   </div>
 </template>
 
-<style lang="scss" scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
+<style scoped>
+.test {
+  font-size: 39px;
 }
 </style>

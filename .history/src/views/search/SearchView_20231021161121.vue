@@ -2,29 +2,11 @@
 import { ref, computed, watch } from 'vue'
 import OpSearch from '@/components/OpSearch.vue'
 import { fetchSearchData } from '@/api/search'
-import { useToggle } from '@/use/useToggle'
 import type { ISearchResult } from '@/types'
 interface IEmits {
   (e: 'cancel'): void
 }
 const emits = defineProps<IEmits>()
-
-const HISTORY_TAGS = [
-  '比萨',
-  '栗子',
-  '切果NOW',
-  '炒饭',
-  '出前一丁',
-  '玉米',
-  '牛腩',
-  '土豆焗饭',
-  '烧烤',
-  '水果',
-]
-const [isHistoryTagShown, toggleHistoryTag] = useToggle(false)
-const historyTags = computed(() =>
-  isHistoryTagShown.value ? HISTORY_TAGS : HISTORY_TAGS.slice(0, 5)
-)
 
 const searchValue = ref('')
 const searchResult = ref([] as ISearchResult[])
@@ -40,22 +22,10 @@ const onSearch = async (v?: string | number) => {
     searchState.value = DONE
   }
 }
-const onTagClick = (v: string) => {
-  searchValue.value = v
-  onSearch(v)
-}
-// 输入的时候监听请求
-watch(searchValue, (nv) => {
-  if (!nv) {
-    searchResult.value = []
-    return
-  }
-  onSearch(nv as string)
-})
 </script>
 
 <template>
-  <div class="search-view">
+  <div class="search-view" @click="emits('cancel')">
     <OpSearch
       show-action
       v-model="searchValue"
@@ -140,15 +110,5 @@ watch(searchValue, (nv) => {
       color: var(--van-gray-6);
     }
   }
-}
-
-.list-enter-active,
-.list-leave-active {
-  transition: all 1s ease;
-}
-.list-enter-from,
-.list-leave-to {
-  opacity: 0;
-  transform: translateY(30px);
 }
 </style>
