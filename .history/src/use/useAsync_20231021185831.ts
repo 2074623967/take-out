@@ -11,6 +11,8 @@ export function useAsync<T>(asyncFn: () => Promise<T>, initValue: T, immediate =
     return asyncFn()
       .then((res) => {
         data.value = res as UnwrapRef<T>
+        console.log(data.value.searchRecomments
+          :)
         pending.value = false
       })
       .catch((err) => {
@@ -22,10 +24,11 @@ export function useAsync<T>(asyncFn: () => Promise<T>, initValue: T, immediate =
   if (immediate) {
     execute()
   }
+
   return {
-    pending,
-    data,
-    error,
-    execute,
+    pending, //请求中
+    data, //数据
+    error, //报错信息
+    execute, //执行函数句柄
   }
 }

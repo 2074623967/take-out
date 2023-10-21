@@ -22,6 +22,8 @@ export function useAsync<T>(asyncFn: () => Promise<T>, initValue: T, immediate =
   if (immediate) {
     execute()
   }
+  console.log(data.value._value)
+  console.log(data.value)
   return {
     pending,
     data,

@@ -35,9 +35,7 @@ const { data, pending } = useAsync(fetchHomePageData, {
     </Transition>
     <div v-show="!isSearchViewShown">
       <TheTop :recomments="data.searchRecomments" @searchClick="toggleSearchView" />
-      <OpLoadingView :loading="pending" type="skeleton">
-        <div>{{ data }}</div>
-      </OpLoadingView>
+    
     </div>
   </div>
 </template>

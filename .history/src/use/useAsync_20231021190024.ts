@@ -22,10 +22,11 @@ export function useAsync<T>(asyncFn: () => Promise<T>, initValue: T, immediate =
   if (immediate) {
     execute()
   }
+console
   return {
-    pending,
-    data,
-    error,
-    execute,
+    pending, //请求中
+    data, //数据
+    error, //报错信息
+    execute, //执行函数句柄
   }
 }

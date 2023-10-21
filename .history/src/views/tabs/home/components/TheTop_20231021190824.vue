@@ -41,7 +41,7 @@ const emits = defineEmits<IEmits>()
       </template>
     </OpSearch>
     <div class="search-recomments">
-      <div v-for="item in recomments" :key="item.value" class="tag">{{ item.label }}</div>
+      <div v-for="item in recomments" :key="item.value" class="tag">{{ item }}</div>
     </div>
   </div>
 </template>

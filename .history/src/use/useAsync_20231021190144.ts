@@ -25,7 +25,7 @@ export function useAsync<T>(asyncFn: () => Promise<T>, initValue: T, immediate =
   return {
     pending,
     data,
-    error,
-    execute,
+    error, 
+    execute, //执行函数句柄
   }
 }
