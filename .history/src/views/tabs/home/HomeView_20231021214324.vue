@@ -7,7 +7,6 @@ import ScrollBar from './components/ScrollBar.vue'
 import { useToggle } from '@/use/useToggle'
 import { useAsync } from '@/use/useAsync'
 import { fetchHomePageData } from '@/api/home'
-import type { ICountdown, IHomeInfo } from '@/types'
 // const recomments = [
 //   {
 //     value: 1,

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import TheTop from './components/TheTop.vue'
 import SearchView from '@/views/search/SearchView.vue'
 import OpLoadingView from '@/components/OpLoadingView.vue'

@@ -3,11 +3,9 @@ import TheTop from './components/TheTop.vue'
 import SearchView from '@/views/search/SearchView.vue'
 import OpLoadingView from '@/components/OpLoadingView.vue'
 import TheTransformer from './components/TheTransformer.vue'
-import ScrollBar from './components/ScrollBar.vue'
 import { useToggle } from '@/use/useToggle'
 import { useAsync } from '@/use/useAsync'
 import { fetchHomePageData } from '@/api/home'
-import type { ICountdown, IHomeInfo } from '@/types'
 // const recomments = [
 //   {
 //     value: 1,
