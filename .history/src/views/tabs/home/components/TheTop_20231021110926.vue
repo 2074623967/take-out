@@ -37,7 +37,7 @@ const emits = defineEmits<IEmits>()
       @inputClick="emits('searchClick')"
     >
       <template #right-icon>
-        <div @click="emits('searchClick')">搜索</div>
+        <div>搜索</div>
       </template>
     </OpSearch>
     <div class="search-recomments">

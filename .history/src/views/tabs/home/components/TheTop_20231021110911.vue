@@ -34,10 +34,9 @@ const emits = defineEmits<IEmits>()
       shape="round"
       background="linear-gradient(to right, rgb(53, 200, 250), rgb(31, 175, 243))"
       placeholder="世界茶饮 35减2"
-      @inputClick="emits('searchClick')"
     >
       <template #right-icon>
-        <div @click="emits('searchClick')">搜索</div>
+        <div>搜索</div>
       </template>
     </OpSearch>
     <div class="search-recomments">
