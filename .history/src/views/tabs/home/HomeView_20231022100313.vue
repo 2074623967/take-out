@@ -45,9 +45,6 @@ const { data, pending } = useAsync(fetchHomePageData, {
         </div>
         <TheTransformer :data="data.transformer" />
         <ScrollBar :data="data.scrollBarInfoList" />
-        <div class="home-page__activity">
-          <CountDown :data="data.countdown" />
-        </div>
       </OpLoadingView>
     </div>
   </div>
@@ -78,6 +75,16 @@ const { data, pending } = useAsync(fetchHomePageData, {
     justify-content: space-between;
     align-items: center;
     margin: 10px;
+
+    &__swipe {
+      border-radius: 8px;
+      width: 180px;
+      height: 170px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }
 </style>

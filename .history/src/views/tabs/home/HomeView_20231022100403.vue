@@ -47,6 +47,11 @@ const { data, pending } = useAsync(fetchHomePageData, {
         <ScrollBar :data="data.scrollBarInfoList" />
         <div class="home-page__activity">
           <CountDown :data="data.countdown" />
+          <OpSwipe class="home-page__activity__swipe" :autoplay="3000" :loop="true">
+            <OpSwipeItem v-for="v in data.activities" :key="v">
+              <img :src="v" />
+            </OpSwipeItem>
+          </OpSwipe>
         </div>
       </OpLoadingView>
     </div>
@@ -78,6 +83,16 @@ const { data, pending } = useAsync(fetchHomePageData, {
     justify-content: space-between;
     align-items: center;
     margin: 10px;
+
+    &__swipe {
+      border-radius: 8px;
+      width: 180px;
+      height: 170px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }
 </style>
