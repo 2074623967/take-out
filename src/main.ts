@@ -26,6 +26,7 @@ import {
 
 import App from './App.vue'
 import router from './router'
+import lazyPlugin from './directives/lazyLoading'
 
 import 'vant/lib/index.css'
 import './assets/common.scss'
@@ -55,6 +56,7 @@ app.use(SidebarItem)
 app.use(Popup)
 app.use(Checkbox)
 app.use(CheckboxGroup)
+app.use(lazyPlugin)
 
 const rootValue = 16
 const rootWidth = 390 //适配iphone12

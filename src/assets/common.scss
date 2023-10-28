@@ -1,11 +1,17 @@
+#app {
+  --op-primary-color: rgb(31, 175, 243);
+  --op-gray-bg-color: rgb(244, 244, 244);
+  --op-page-padding: 10px;
+}
+
 .op {
   &-thin-border {
     color: rgb(247, 68, 68);
     position: relative;
     border: none;
-    // 如果直接使用 border 的话,因为这里有 transform: scale(0.2) 把边框线变细
+    // 如果直接使用 border 的话，因为这里有 transform: scale(0.2) 把边框线变细
     // 但这样也会把整个元素也缩小
-    // 所以这里使用伪元素 :before 来画边框线,这样缩小边框线就不会影响到整个元素
+    // 所以这里使用伪元素 :before 来画边框线，这样缩小边框线就不会影响到整个元素
     &:before {
       content: '';
       position: absolute;
