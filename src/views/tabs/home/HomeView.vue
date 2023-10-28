@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import TheTop from './components/TheTop.vue'
 import SearchView from '@/views/search/SearchView.vue'
 import OpLoadingView from '@/components/OpLoadingView.vue'
@@ -11,6 +12,8 @@ import { useToggle } from '@/use/useToggle'
 import { useAsync } from '@/use/useAsync'
 import { fetchHomePageData } from '@/api/home'
 import type { ICountdown, IHomeInfo } from '@/types'
+import { PRIMARY_COLOR, TRANSPARENT } from '@/config'
+import { HOME_TABS } from './config'
 // const recomments = [
 //   {
 //     value: 1,
@@ -31,6 +34,11 @@ const { data, pending } = useAsync(fetchHomePageData, {
   countdown: {} as ICountdown,
   activities: [],
 } as IHomeInfo)
+
+const tabBackgruondColor = ref(TRANSPARENT)
+const onTabScroll = ({ isFixed }: { isFixed: boolean }) => {
+  tabBackgruondColor.value = isFixed ? 'white' : TRANSPARENT
+}
 </script>
 
 <template>
@@ -55,6 +63,17 @@ const { data, pending } = useAsync(fetchHomePageData, {
             </OpSwipeItem>
           </OpSwipe>
         </div>
+        <VanTabs
+          sticky
+          offset-top="54px"
+          :color="PRIMARY_COLOR"
+          :background="tabBackgruondColor"
+          @scroll="onTabScroll"
+        >
+          <VanTab v-for="v in HOME_TABS" :key="v.value" :title="v.title">
+            <component :is="v.component"></component>
+          </VanTab>
+        </VanTabs>
       </OpLoadingView>
     </div>
   </div>
