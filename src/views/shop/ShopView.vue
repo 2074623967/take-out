@@ -2,11 +2,13 @@
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useAsync } from '@/use/useAsync'
+import { useLockScroll } from '@/use/useLockScroll'
 import { fetchShopPageData } from '@/api/shop'
 import { PRIMARY_COLOR } from '@/config'
 import OpLoadingView from '@/components/OpLoadingView.vue'
 import ShopHeader from './components/ShopHeader.vue'
 import GoodsList from './components/GoodsList.vue'
+import ShopCart from './components/ShopCart.vue'
 
 const TAB_LIST = [
   {
@@ -64,6 +66,7 @@ useLockScroll(() => active.value === 1)
           <component :is="v.component"></component>
         </VanTab>
       </VanTabs>
+      <ShopCart v-if="active === 1" />
     </OpLoadingView>
   </div>
 </template>
